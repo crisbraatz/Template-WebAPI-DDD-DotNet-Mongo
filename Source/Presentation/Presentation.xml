@@ -1,0 +1,107 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Presentation</name>
+    </assembly>
+    <members>
+        <member name="T:Presentation.Controllers.BaseController">
+            <response code="401">Unauthorized access.</response>
+            <response code="500">An internal server error has occurred.</response>
+        </member>
+        <member name="M:Presentation.Controllers.UsersController.Authenticate(Presentation.DTOs.Requests.AuthenticationRequest)">
+            <summary>
+            Authenticate the user by providing its email and password.
+            </summary>
+            <response code="200">Returns the token.</response>
+            <response code="400">The request was unsuccessful, see details.</response>
+            <response code="404">User not found.</response>
+        </member>
+        <member name="M:Presentation.Controllers.UsersController.Inactivate(Presentation.DTOs.Requests.InactivationRequest)">
+            <summary>
+            Inactivate the user by providing its email and password.
+            </summary>
+            <response code="200">User inactivted.</response>
+            <response code="400">The request was unsuccessful, see details.</response>
+            <response code="404">User not found.</response>
+        </member>
+        <member name="M:Presentation.Controllers.UsersController.Register(Presentation.DTOs.Requests.RegistrationRequest)">
+            <summary>
+            Register the user by providing its email and password.
+            </summary>
+            <response code="200">User registered.</response>
+            <response code="400">The request was unsuccessful, see details.</response>
+            <response code="409">User already registered.</response>
+        </member>
+        <member name="M:Presentation.Controllers.UsersController.UpdatePassword(Presentation.DTOs.Requests.UpdatePasswordRequest)">
+            <summary>
+            Update the user's password by providing its email, old and new passwords.
+            </summary>
+            <response code="200">User's password updated.</response>
+            <response code="400">The request was unsuccessful, see details.</response>
+            <response code="404">User not found.</response>
+        </member>
+        <member name="M:Presentation.Controllers.UsersController.Test">
+            <summary>
+            Check if the user is authorized.
+            </summary>
+            <response code="200">User authorized.</response>
+            <response code="401">User not authorized.</response>
+        </member>
+        <member name="P:Presentation.DTOs.Requests.AuthenticationRequest.Email">
+            <summary>
+            Valid formatted email.
+            </summary>
+        </member>
+        <member name="P:Presentation.DTOs.Requests.AuthenticationRequest.Password">
+            <summary>
+            At least one lower case letter, one upper case letter and one number.
+            Must have between 8 and 16 characters.
+            </summary>
+        </member>
+        <member name="P:Presentation.DTOs.Requests.InactivationRequest.Email">
+            <summary>
+            Valid formatted email.
+            </summary>
+        </member>
+        <member name="P:Presentation.DTOs.Requests.InactivationRequest.Password">
+            <summary>
+            At least one lower case letter, one upper case letter and one number.
+            Must have between 8 and 16 characters.
+            </summary>
+        </member>
+        <member name="P:Presentation.DTOs.Requests.RegistrationRequest.Email">
+            <summary>
+            Valid formatted email.
+            </summary>
+        </member>
+        <member name="P:Presentation.DTOs.Requests.RegistrationRequest.Password">
+            <summary>
+            At least one lower case letter, one upper case letter and one number.
+            Must have between 8 and 16 characters.
+            </summary>
+        </member>
+        <member name="P:Presentation.DTOs.Requests.UpdatePasswordRequest.Email">
+            <summary>
+            Valid formatted email.
+            </summary>
+        </member>
+        <member name="P:Presentation.DTOs.Requests.UpdatePasswordRequest.OldPassword">
+            <summary>
+            At least one lower case letter, one upper case letter and one number.
+            Must have between 8 and 16 characters.
+            </summary>
+        </member>
+        <member name="P:Presentation.DTOs.Requests.UpdatePasswordRequest.NewPassword">
+            <summary>
+            At least one lower case letter, one upper case letter and one number.
+            Must have between 8 and 16 characters.
+            Must be different than old password.
+            </summary>
+        </member>
+        <member name="P:Presentation.DTOs.Responses.AuthorizationResponse.Token">
+            <summary>
+            JWT authorization header using the bearer scheme.
+            </summary>
+        </member>
+    </members>
+</doc>

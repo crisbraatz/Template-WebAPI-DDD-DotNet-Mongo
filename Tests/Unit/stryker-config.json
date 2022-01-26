@@ -1,0 +1,29 @@
+{
+  "stryker-config": {
+    "mutate": [
+      "!Common/Exceptions/**",
+      "!Controllers/**",
+      "!DependencyInjection.cs",
+      "!Middlewares/**",
+      "!Migrations/**",
+      "!Mongo/**",
+      "!Startup.cs",
+      "!SwaggerDocs/**"
+    ],
+    "mutation-level": "Complete",
+    "ignore-methods": [
+      "DeleteMany",
+      "DeleteOne",
+      "*Exception.ctor",
+      "GetEnvironmentVariable",
+      "InsertMany",
+      "InsertOne",
+      "Log*",
+      "SelectManyBy",
+      "SelectOneBy",
+      "SetEnvironmentVariable",
+      "UpdateMany",
+      "UpdateOne"
+    ]
+  }
+}
