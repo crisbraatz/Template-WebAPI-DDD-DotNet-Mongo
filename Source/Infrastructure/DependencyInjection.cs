@@ -28,9 +28,9 @@ public static class DependencyInjection
             return builder?.GetDatabase();
         });
 
-        services.AddScoped<IBaseEntityRepository<User>, UserRepository>();
-
         services.AddHealthChecks()
             .AddMongoDb(connectionString);
+
+        services.AddScoped<IBaseEntityRepository<User>, UserRepository>();
     }
 }
